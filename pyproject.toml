@@ -4,8 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "audio_reader_osc"
-dependencies = []
-requires-python = ">= 3.8"
+dependencies = [
+    "logger @ git+https://gitlab.com/ameliend/logger.git",
+    "chatbox_osc @ git+https://gitlab.com/ameliend/chatbox_osc.git",
+    "python_osc>=1.9.0,<2",
+    "pygame>=2.6.0,<3"
+]
+requires-python = ">= 3.10"
 authors = [
   {name = "Amelien Deshams", email = "a.deshams+git@slmail.me"}
 ]
@@ -17,22 +22,15 @@ readme = "README.md"
 license = { text = "MIT license" }
 keywords = []
 classifiers = [ # https://pypi.org/classifiers/
-    # How mature is this project? Common values are
-    #   3 - Alpha
-    #   4 - Beta
-    #   5 - Production/Stable
     "Development Status :: 3 - Alpha",
-
-    # Indicate your platform
     "Environment :: Win32 (MS Windows)",
+    "Environment :: Console",
     "Operating System :: Microsoft :: Windows",
-
-    # Pick your license as you wish (see also "license" above)
     "License :: OSI Approved :: MIT license",
-
-    # Specify the Python versions you support here.
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Multimedia :: Sound/Audio",
 ]
 dynamic = ["version"]
 
@@ -48,6 +46,9 @@ documentation = [
 tests = [
     "pytest",
 ]
+utils = [
+    "whisper_dictate @ git+https://gitlab.com/ameliend/whisper-dictate.git",
+]
 
 [project.urls]
 Documentation = "https://ameliend.gitlab.io/audio-reader-osc"
@@ -58,6 +59,8 @@ Changelog = "https://gitlab.com/ameliend/audio-reader-osc/blob/main/CHANGELOG.md
 # Remove these lines if you don't want to use scripts in you project
 [project.scripts]
 audio_reader_osc = "audio_reader_osc.cli:main_cli"
+create_text_associations = "audio_reader_osc.cli:create_text_associations_cli"
+create_text_associations_for_musics = "audio_reader_osc.cli:create_text_associations_for_musics_cli"
 
 [tool.setuptools]
 package-dir = { "" = "src" }
@@ -87,6 +90,7 @@ ignore = [
     "ANN002", # Sometimes we don't know the type of the *args argument.
     "ANN003", # Sometimes we don't know the type of the *kwargs argument.
     "INP001", # Because the `docs` folder is not a Python Package.
+    "S311",
 ]
 
 [tool.ruff.lint.pylint]
