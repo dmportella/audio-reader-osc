@@ -51,7 +51,6 @@ utils = [
 ]
 
 [project.urls]
-Documentation = "https://ameliend.gitlab.io/audio-reader-osc"
 Repository = "https://gitlab.com/ameliend/audio-reader-osc"
 Issues = "https://gitlab.com/ameliend/audio-reader-osc/issues"
 Changelog = "https://gitlab.com/ameliend/audio-reader-osc/blob/main/CHANGELOG.md"
