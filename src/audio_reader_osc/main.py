@@ -6,6 +6,8 @@ import random
 import threading
 from pathlib import Path
 
+os.environ["PYGAME_HIDE_SUPPORT_PROMPT"] = "1"  # Remove pygame Hello print
+
 import pygame
 import pygame.mixer
 from logger import Logger
