@@ -1,3 +1,13 @@
+## [1.1.0](https://gitlab.com/ameliend/audio-reader-osc/compare/v1.0.0...v1.1.0) (2024-11-07)
+
+### 📔 Docs
+
+* **sphinx:** removed sphinx docs ([4d4aa53](https://gitlab.com/ameliend/audio-reader-osc/commit/4d4aa53e6e26af6cd7e86dae55ac64d32d6ad3d5))
+
+### 🚀 Features
+
+* removed pygame hello print ([0812f22](https://gitlab.com/ameliend/audio-reader-osc/commit/0812f22399a0e5e53f29e3fd4a58f558ea3c9968))
+
 ## [1.0.0](https://gitlab.com/ameliend/audio-reader-osc/compare/...v1.0.0) (2024-11-01)
 
 ### 📔 Docs
